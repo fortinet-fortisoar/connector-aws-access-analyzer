@@ -1,5 +1,5 @@
 """ Copyright start
-  Copyright (C) 2008 - 2021 Fortinet Inc.
+  Copyright (C) 2008 - 2022 Fortinet Inc.
   All rights reserved.
   FORTINET CONFIDENTIAL & FORTINET PROPRIETARY SOURCE CODE
   Copyright end """
@@ -7,7 +7,7 @@
 from connectors.core.connector import Connector, get_logger, ConnectorError
 from .operations import check_health, operations
 
-logger = get_logger('aws-cloudtrail')
+logger = get_logger('aws-access-analyzer')
 
 
 class AwsAccessAnalyzer(Connector):

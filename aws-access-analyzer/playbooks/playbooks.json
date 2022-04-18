@@ -621,7 +621,7 @@
       "name": "Sample - AWS Access Analyzer - 1.0.0",
       "description": "Identity and Access Management Access Analyzer helps identify potential resource-access risks by enabling you to identify any policies that grant access to an external principal.",
       "visible": true,
-      "image": null
+      "image": "playbook.png"
     }
   ]
 }

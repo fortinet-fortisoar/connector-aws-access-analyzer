@@ -187,7 +187,7 @@
              "createdAt":"",
              "lastResourceAnalyzed":"",
              "lastResourceAnalyzedAt":"",
-             "name":"string",
+             "name":"",
              "status":"",
              "statusReason":{
                 "code":""
@@ -198,7 +198,7 @@
              "type":""
           }
        ],
-       "nextToken":"string"
+       "nextToken":""
     }
     },
     {
@@ -420,7 +420,7 @@
        "createdAt":"",
        "lastResourceAnalyzed":"",
        "lastResourceAnalyzedAt":"",
-       "name":"string",
+       "name":"",
        "status":"",
        "statusReason":{
           "code":""
@@ -639,7 +639,7 @@
         }
       ],
       "enabled": true,
-      "output_schema": []
+      "output_schema": [""]
     },
     {
       "operation": "get_analyzed_resources",
@@ -959,7 +959,7 @@
         },
         {
           "title": "ID",
-          "type": "string",
+          "type": "text",
           "name": "id",
           "required": true,
           "editable": true,
@@ -1169,8 +1169,8 @@
           "visible": true,
           "value": [],
           "placeholder": ["id1", "id2"],
-          "tooltip": "Specify ID's in list",
-          "description": "Specify ID's in list"
+          "tooltip": "Comma separated list of ID's.",
+          "description": "Comma separated list of ID's."
         },
         {
           "title": "Status",
@@ -1189,7 +1189,7 @@
         },
         {
           "title": "Client Token",
-          "type": "string",
+          "type": "text",
           "name": "client_token",
           "required": false,
           "editable": true,
