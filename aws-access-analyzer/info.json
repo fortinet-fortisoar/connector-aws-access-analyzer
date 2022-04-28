@@ -1,13 +1,13 @@
 {
   "name": "aws-access-analyzer",
   "label": "AWS Access Analyzer",
-  "description": "Identity and Access Management Access Analyzer helps identify potential resource-access risks by enabling you to identify any policies that grant access to an external principal.",
+  "description": "AWS Access Analyzer helps you identify the resources in your organization and accounts, such as Amazon S3 buckets or IAM roles, shared with an external entity, enabling you to identify unintended access to your resources and data, which is a security risk. ",
   "publisher": "Community",
   "cs_approved": false,
   "cs_compatible": true,
   "version": "1.0.0",
   "category": "AWS Service",
-  "help_online": "",
+  "help_online": "https://docs.fortinet.com/document/fortisoar/1.0.0/aws-access-analyzer/265/aws-access-analyzer-v1-0-0",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "configuration": {
@@ -91,7 +91,7 @@
       "title": "List Analyzers",
       "category": "investigation",
       "annotation": "list_analyzers",
-      "description": "Retrieves a list of analyzers.",
+      "description": "Retrieves a list of analyzers based on the analyzer type and other input parameters you have specified. ",
       "parameters": [
         {
           "title": "Assume a Role",
@@ -148,7 +148,7 @@
           "editable": true,
           "visible": true,
           "tooltip": "select the type of analyzers.",
-          "description": "Select the type of analyzers either 'ACCOUNT' or 'ORGANIZATION'",
+          "description": "Select the type of analyzers that you want to retrieve using AWS Access Analyzer. You can choose either 'ACCOUNT' or 'ORGANIZATION'.",
           "options": [
             "ACCOUNT",
             "ORGANIZATION"
@@ -164,7 +164,7 @@
           "value": 10,
           "placeholder": 10,
           "tooltip": "Specifies the maximum size of analyzer list",
-          "description": "Specifies the maximum size of analyzer list"
+          "description": "Specify the maximum size of the analyzer list that you want to retrieve using AWS Access Analyzer."
         },
         {
           "title": "Next Page Token",
@@ -175,7 +175,7 @@
           "visible": true,
           "value": "",
           "tooltip": "Specifies the next page token. Not required for the first page. And you can find 'nextToken' value in first page data.",
-          "description": "Specifies the next page token. Not required for the first page. And you can find 'nextToken' value in first page data."
+          "description": "(Optional) The next page token is used for paginating through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. You can use this parameter to retrieve the next page records using the 'nextToken' value and it is not required for the first page."
         }
 
       ],
@@ -352,7 +352,7 @@
       "title": "Get analyzer details",
       "category": "investigation",
       "annotation": "get_analyzers",
-      "description": "Retrieves information about the specified analyzer.",
+      "description": "Retrieves information about the specified analyzer based on the analyzer name and other input parameters you have specified.",
       "visible": true,
       "parameters": [
         {
@@ -410,7 +410,7 @@
           "editable": true,
           "visible": true,
           "tooltip": "select the name of analyzers.",
-          "description": "Select the name of analyzers from list",
+          "description": "Select the name of the analyzer whose details you want to retrieve using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_names\" to dynamically populate the Analyzer Name's drop-down selections. ",
           "apiOperation": "list_analyzers_only_names"
         }
       ],
@@ -436,7 +436,7 @@
       "title": "List of Analyzed Resources",
       "category": "investigation",
       "annotation": "list_analyzed_resources",
-      "description": "Retrieves a list of resources of the specified type that have been analyzed by the specified analyzer.",
+      "description": "Retrieves a list of specified resource types that have been analyzed by the specified analyzer based on the analyzer ARN, resource type, and other input parameters you have specified. ",
       "visible": true,
       "parameters": [
         {
@@ -494,7 +494,7 @@
           "editable": true,
           "visible": true,
           "tooltip": "select the arn of analyzers.",
-          "description": "Select the arn of analyzers from list",
+          "description": "Select the ARN of the analyzer whose analyzed resources you want to retrieve using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
           "apiOperation": "list_analyzers_only_arn"
         },
         {
@@ -505,7 +505,7 @@
           "editable": true,
           "visible": true,
           "tooltip": "select the type of resources.",
-          "description": "Select the type of resources",
+          "description": "Select the type of resources you want to retrieve using AWS Access Analyzer. You can choose from resource types such as AWS::IAM::Role, AWS::S3::Bucket, AWS::KMS::Key, etc. ",
           "options": [
             "AWS::S3::Bucket",
             "AWS::IAM::Role",
@@ -526,7 +526,7 @@
           "value": 10,
           "placeholder": 10,
           "tooltip": "Specifies the maximum size of analyzed resource list",
-          "description": "Specifies the maximum size of analyzed resource list"
+          "description": "Specify the maximum size of the analyzed resource list that you want to retrieve using AWS Access Analyzer."
         },
         {
           "title": "Next Page Token",
@@ -537,7 +537,7 @@
           "visible": true,
           "value": "",
           "tooltip": "Specifies the next page token. Not required for the first page. And you can find 'nextToken' value in first page data.",
-          "description": "Specifies the next page token. Not required for the first page. And you can find 'nextToken' value in first page data."
+          "description": "(Optional) The next page token is used for paginating through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. You can use this parameter to retrieve the next page records using the 'nextToken' value and it is not required for the first page."
         }
       ],
       "enabled": true,
@@ -646,7 +646,7 @@
       "title": "Details of an Analyzed Resources",
       "category": "investigation",
       "annotation": "get_analyzed_resources",
-      "description": "Retrieves information about a resource that was analyzed.",
+      "description": "Retrieves information about a resource that was analyzed by the specified analyzer based on the analyzer ARN and resource ARN you have specified. ",
       "visible": true,
       "parameters": [
         {
@@ -704,7 +704,7 @@
           "editable": true,
           "visible": true,
           "tooltip": "select the arn of analyzers.",
-          "description": "Select the arn of analyzers from list",
+          "description": "Select the ARN of the analyzer whose analyzed resource details you want to retrieve using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
           "apiOperation": "list_analyzers_only_arn"
         },
         {
@@ -715,7 +715,7 @@
           "editable": true,
           "visible": true,
           "tooltip": "select the arn of resources.",
-          "description": "Select the arn of resources",
+          "description": "Select the ARN of resources that were analyzed using the specified analyzer. This parameter makes an API call named \"list_analyzed_resources_only_arn\" to dynamically populate the Resource ARN's drop-down selections. ",
           "apiOperation": "list_analyzed_resources_only_arn"
         }
       ],
@@ -745,7 +745,7 @@
       "title": "List of Findings",
       "category": "investigation",
       "annotation": "list_findings",
-      "description": "Retrieves a list of findings generated by the specified analyzer.",
+      "description": "Retrieves a list of findings generated by the specified analyzer based on the analyzer ARN and other input parameters you have specified. ",
       "visible": true,
       "parameters": [
         {
@@ -803,7 +803,7 @@
           "editable": true,
           "visible": true,
           "tooltip": "select the arn of analyzers.",
-          "description": "Select the arn of analyzers from list",
+          "description": "Select the ARN of the analyzer whose findings you want to retrieve using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
           "apiOperation": "list_analyzers_only_arn"
         },
         {
@@ -816,7 +816,7 @@
           "value": 10,
           "placeholder": 10,
           "tooltip": "Specifies the maximum size of finding list",
-          "description": "Specifies the maximum size of findings list"
+          "description": "Specify the maximum size of the findings list that you want to retrieve using AWS Access Analyzer."
         },
         {
           "title": "Filter Query",
@@ -828,7 +828,7 @@
           "value": null,
           "placeholder": {},
           "tooltip": "Specifies the filter query.",
-          "description": "Specifies the filter query."
+          "description": "(Optional) Specify a query using which you want to filter the finding list retrieved using AWS Access Analyzer. "
         },
         {
           "title": "Sort Parameter",
@@ -840,7 +840,7 @@
           "value": null,
           "placeholder": {},
           "tooltip": "Specifies the sort attributes",
-          "description": "Specifies the sort attributes."
+          "description": "(Optional) Specify the attributes using which you want to sort the finding list retrieved using AWS Access Analyzer. "
         },
         {
           "title": "Next Page Token",
@@ -851,7 +851,7 @@
           "visible": true,
           "value": "",
           "tooltip": "Specifies the next page token. Not required for the first page. And you can find 'nextToken' value in first page data.",
-          "description": "Specifies the next page token. Not required for the first page. And you can find 'nextToken' value in first page data."
+          "description": "(Optional) The next page token is used for paginating through large result sets. A next page token will be returned whenever the set of available results exceeds the current page size. You can use this parameter to retrieve the next page records using the 'nextToken' value and it is not required for the first page.  "
         }
 
       ],
@@ -896,7 +896,7 @@
       "title": "Get Finding Details",
       "category": "investigation",
       "annotation": "get_findings",
-      "description": "Retrieves information about the specified finding.",
+      "description": "Retrieves information about the specified finding generated by the specified analyzer based on the analyzer ARN and finding ID you have specified.",
       "visible": true,
       "parameters": [
         {
@@ -954,7 +954,7 @@
           "editable": true,
           "visible": true,
           "tooltip": "select the arn of analyzers.",
-          "description": "Select the arn of analyzers from list",
+          "description": "Select the ARN of the analyzer whose finding details you want to retrieve using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
           "apiOperation": "list_analyzers_only_arn"
         },
         {
@@ -966,7 +966,7 @@
           "visible": true,
           "value": "",
           "tooltip": "Specifies the id of findings",
-          "description": "Specifies the id of findings"
+          "description": "Specify the ID of findings whose details you want to retrieve using AWS Access Analyzer. "
         }
       ],
       "enabled": true,
@@ -1007,7 +1007,7 @@
       "title": "Start Resource Scan",
       "category": "investigation",
       "annotation": "start_resource_scan",
-      "description": "Immediately starts a scan of the policies applied to the specified resource.",
+      "description": "Immediately starts a scan of the policies applied to the specified resource based on the analyzer ARN and resource ARN you have specified. ",
       "visible": true,
       "parameters": [
         {
@@ -1065,7 +1065,7 @@
           "editable": true,
           "visible": true,
           "tooltip": "select the arn of analyzers.",
-          "description": "Select the arn of analyzers from list",
+          "description": "Select the ARN of the analyzer using which you want to scan the policies on the specified resource. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
           "apiOperation": "list_analyzers_only_arn"
         },
         {
@@ -1076,7 +1076,7 @@
           "editable": true,
           "visible": true,
           "tooltip": "select the arn of resources.",
-          "description": "Select the arn of resources",
+          "description": "Select the ARN of resources whose associated policies you want to scan using the specified analyzer. This parameter makes an API call named \"list_analyzed_resources_only_arn\" to dynamically populate the Resource ARN's drop-down selections. ",
           "apiOperation": "list_analyzed_resources_only_arn"
         }
       ],
@@ -1088,7 +1088,7 @@
       "title": "Update Findings Status",
       "category": "investigation",
       "annotation": "update_findings",
-      "description": "Updates the status for the specified findings.",
+      "description": "Updates the status of the specified findings of a specified analyzer based on the analyzer ARN, resource ARN, findings IDs, and other input parameters you have specified. ",
       "visible": true,
       "parameters": [
         {
@@ -1146,7 +1146,7 @@
           "editable": true,
           "visible": true,
           "tooltip": "select the arn of analyzers.",
-          "description": "Select the arn of analyzers from list",
+          "description": "Select the ARN of the analyzer whose findings' status you want to update using AWS Access Analyzer. This parameter makes an API call named \"list_analyzers_only_arn\" to dynamically populate the Analyzer ARN's drop-down selections. ",
           "apiOperation": "list_analyzers_only_arn"
         },
         {
@@ -1157,8 +1157,8 @@
           "editable": true,
           "visible": true,
           "tooltip": "select the arn of resources.",
-          "description": "Select the arn of resources",
-          "apiOperation": "list_analyzed_resources_only_arn"
+          "description": "Select the ARN of resources whose findings' status you want to update using the specified analyzer. This parameter makes an API call named \"list_analyzed_resources_only_arn\" to dynamically populate the Resource ARN's drop-down selections. ",
+          "apiOperation": ""
         },
         {
           "title": "ID List",
@@ -1170,7 +1170,7 @@
           "value": [],
           "placeholder": ["id1", "id2"],
           "tooltip": "Comma separated list of ID's.",
-          "description": "Comma separated list of ID's."
+          "description": "Specify a comma-separated list of findings' IDs whose status you want to update using AWS Access Analyzer. "
         },
         {
           "title": "Status",
@@ -1180,8 +1180,8 @@
           "editable": true,
           "visible": true,
           "value": "ACTIVE",
-          "tooltip": "Specify the status 'ACTIVE' or 'ARCHIVED'",
-          "description": "Specify the status 'ACTIVE' or 'ARCHIVED'",
+          "tooltip": "Select the status of the specified findings as either 'ACTIVE' or 'ARCHIVED'. ",
+          "description": "Select the status of the specified findings as either 'ACTIVE' or 'ARCHIVED'. ",
           "options": [
             "ACTIVE",
             "ARCHIVED"
@@ -1196,7 +1196,7 @@
           "visible": true,
           "value": "",
           "tooltip": "Specifies the client token",
-          "description": "Specifies the client token"
+          "description": "Specify the client token to update the status of the specified findings. "
         }
       ],
       "enabled": true,
